@@ -8,8 +8,8 @@ Read through the pseudo-code prompt below and write code to implement its functi
 ## Pseudo-Code for Part C
 1. Include the required header files for the mbed board
 2. Declare the required objects to:
-     a. communicate with the computer over a serial port
-     b. turn on and off all four LEDs on the bottom of the board
+     1. communicate with the computer over a serial port
+     2. turn on and off all four LEDs on the bottom of the board
 3. Declare required variables
 4. Within the main function, print a message that tells the users instructions 
 5. Create a loop that will constantly repeat without end
