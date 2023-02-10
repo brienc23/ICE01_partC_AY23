@@ -7,48 +7,27 @@
 
 /* 
 Instructions:  Read through the pseudo-code prompt below and write code to implement its functions.
-  Test and troubleshoot your code, consider malicous users who will try to enter invalid inputs.
+  Test and troubleshoot your code, consider malicious users who will try to enter invalid inputs.
   Add comments to your code, and show your
 */
 
 /* 
-Pseudo-Code for Part B
+Pseudo-Code for Part C
 1. Include the required header files for the mbed board
 2. Declare the required objects to:
      a. communicate with the computer over a serial port
-     b. turn on and off the first LED on the bottom left of the board
-3. Declare a float variable to hold a value that will determine how bright the LED should come on, init to zero
-4. Within the main function, print a message that tells the users instructions on how to change the LED brightness
+     b. turn on and off all four LEDs on the bottom of the board
+3. Declare required variables
+4. Within the main function, print a message that tells the users instructions 
 5. Create a loop that will constantly repeat without end
-6. Read in a single character from the serial port and save it into a character variable
-7. Check if the entered character was "u", if so increase the brightness of the LED output, but below some limit (initially 0.5)
-8. Check if the entered character was "d", if so decrease the brightness of the LED output, but above some limit (always 0.0)
-9. Loop back up to read in a new character
+6. Read in a string from the serial port and save it as an integer variable
+7. Verify that the entered number is between [1-50]
+8. If the number is evenly divisible by 4, then blink LED #4 that many times, i.e. if the user enters 20, LED4 should blink 5 times
+9. Else if, the number is evenly divisible by 3, then blink LED #3 the other factor times,  i.e. if the user enters 9, LED3 should blink 3 times
+10. Else if, the number is evenly divisible by 2, then blink LED #2 the other factor times,  i.e. if the user enters 14, LED2 should blink 7 times
+11. Else, then the number is not divisible by 2, 3, or 4, then blink LED #1 the entered number times,  i.e. if the user enters 13, LED1 should blink 13 times
+12. Loop back up and ask the user for a new number
 */
 
-#include "mbed.h"
- 
-Serial pc(USBTX, USBRX); 
-PwmOut led(LED1);
- 
-float brightness = 0.0;
- 
-int main() {
-    pc.printf("Press 'u' to turn LED1 brightness up, 'd' to turn it down\n");
- 
-    while(1) {
-        char c = pc.getc();
-        if((c == 'u') && (brightness < 0.5)) {
-            brightness += 0.01;
-            led = brightness;
-        }
-        if((c == 'd') && (brightness > 0.0)) {
-            brightness -= 0.01;
-            led = brightness;
-        } 
- 
-    }
-}
 
-
-// Reminder you need to add comments to the above code and any modifications you make, then cut and paste your entire main.cpp file into the lab submission.
+// Make sure you have also added comments to your code, then cut and paste your entire main.cpp file into the lab submission.
