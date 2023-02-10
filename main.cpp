@@ -8,7 +8,7 @@
 /* 
 Instructions:  Read through the pseudo-code prompt below and write code to implement its functions.
   Test and troubleshoot your code, consider malicious users who will try to enter invalid inputs.
-  Add comments to your code, and show your
+  Add comments to your code, and show your instructor it working on your mbed (or take a video if completing outside of class)
 */
 
 /* 

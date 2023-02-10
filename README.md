@@ -1,64 +1,26 @@
 ![](./resources/official_armmbed_example_badge.png)
-# Blinky Mbed OS example
+# SY202 AY23 ICE01 Part C
 
-The example project is part of the [Arm Mbed OS Official Examples](https://os.mbed.com/code/) and is the [getting started example for Mbed OS](https://os.mbed.com/docs/mbed-os/v5.14/quick-start/index.html). It contains an application that repeatedly blinks an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
+Read through the pseudo-code prompt below and write code to implement its functions.
+  Test and troubleshoot your code, consider malicious users who will try to enter invalid inputs.
+  Add comments to your code, and show your instructor it working on your mbed (or take a video if completing outside of class)
 
-You can build the project with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command-line interface tool [Arm Mbed CLI](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli).
-(Note: To see a rendered example you can import into the Arm Online Compiler, please see our [import quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
-
-1. [Install Mbed CLI](https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html).
-
-1. Clone this repository on your system, and change the current directory to where the project was cloned:
-
-    ```bash
-    $ git clone git@github.com:armmbed/mbed-os-example-blinky && cd mbed-os-example-blinky
-    ```
-
-    Alternatively, you can download the example project with Arm Mbed CLI using the `import` subcommand:
-
-    ```bash
-    $ mbed import mbed-os-example-blinky && cd mbed-os-example-blinky
-    ```
-
-
-## Application functionality
-
-The `main()` function is the single thread in the application. It toggles the state of a digital output connected to an LED on the board.
-
-## Building and running
-
-1. Connect a USB cable between the USB port on the board and the host computer.
-2. <a name="build_cmd"></a> Run the following command to build the example project and program the microcontroller flash memory:
-    ```bash
-    $ mbed compile -m <TARGET> -t <TOOLCHAIN> --flash
-    ```
-The binary is located at `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin`.
-
-Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
-
-Depending on the target, you can build the example project with the `GCC_ARM`, `ARM` or `IAR` toolchain. After installing Arm Mbed CLI, run the command below to determine which toolchain supports your target:
-
-```bash
-$ mbed compile -S
-```
-
-## Expected output
-The LED on your target turns on and off every 500 milliseconds.
-
-
-## Troubleshooting
-If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
-
-## Related Links
-
-* [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html).
-* [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html).
-* [Mbed OS Serial Communication](https://os.mbed.com/docs/latest/tutorials/serial-communication.html).
-* [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html).
-* [Mbed boards](https://os.mbed.com/platforms/).
+## Pseudo-Code for Part C
+1. Include the required header files for the mbed board
+2. Declare the required objects to:
+     a. communicate with the computer over a serial port
+     b. turn on and off all four LEDs on the bottom of the board
+3. Declare required variables
+4. Within the main function, print a message that tells the users instructions 
+5. Create a loop that will constantly repeat without end
+6. Read in a string from the serial port and save it as an integer variable
+7. Verify that the entered number is between [1-50]
+8. If the number is evenly divisible by 4, then blink LED #4 that many times, i.e. if the user enters 20, LED4 should blink 5 times
+9. Else if, the number is evenly divisible by 3, then blink LED #3 the other factor times,  i.e. if the user enters 9, LED3 should blink 3 times
+10. Else if, the number is evenly divisible by 2, then blink LED #2 the other factor times,  i.e. if the user enters 14, LED2 should blink 7 times
+11. Else, then the number is not divisible by 2, 3, or 4, then blink LED #1 the entered number times,  i.e. if the user enters 13, LED1 should blink 13 times
+12. Loop back up and ask the user for a new number  
 
 ### License and contributions
-
-The software is provided under Apache-2.0 license. Contributions to this project are accepted under the same license. Please see contributing.md for more info.
 
 This project contains code from other projects. The original license text is included in those source files. They must comply with our license guide.
