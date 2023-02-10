@@ -1,4 +1,3 @@
-![](./resources/official_armmbed_example_badge.png)
 # SY202 AY23 ICE01 Part C
 
 Read through the pseudo-code prompt below and write code to implement its functions.
